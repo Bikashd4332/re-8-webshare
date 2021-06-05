@@ -30,14 +30,14 @@ const shareDocument = (blob) => {
   const files = [new File([ blob ], 'resident-evil.pdf', { type: "application/pdf" })];
   const title = 'Resident Evil vilage boss stats';
   const text = 'All the bosses of resident evil and their statistics.';
-  const url = "https://www.google.com";
+  const url = "https://en.wikipedia.org/wiki/Resident_Evil";
 
   if (navigator &&  navigator?.canShare && navigator.canShare({ files })) {
     return navigator.share({
         files,
         title,
         text,
-        url: 'https://en.wikipedia.org/wiki/Resident_Evil'
+        url,
     }).catch(error => alert(error));
   }
   console.error("Sharability support does not exist! Can't share document!")
